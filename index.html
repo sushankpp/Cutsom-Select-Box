@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mobile friendly Custom Select box</title>
+  </head>
+  <body>
+    <section>
+      <h1>Mobile-friendly Custom Select Box Plugin Example</h1>
+
+      <p class="text">
+        A jQuery plugin that converts standard select elements into searchable,
+        checkable, mobile-friendly, and nice-looking dropdown lists for a better
+        selection experience.
+      </p>
+
+      <div class="select" id="select">
+        <li class="visible">
+          <span class="selected-value" id="selected-value">Select a country</span>
+
+          <ul class="select-menu" id="select-menu">
+            <div class="select-search">
+              <div class="search-inline">
+                <span class="select-title" id="select-title">Select a country</span>
+                <span class="close">X</span>
+              </div>
+              <input
+                type="text"
+                name="input-search"
+                class="input-search"
+                id="input-search"
+                placeholder="search a country"
+              />
+
+              <ul class="select-list" id="select-list">
+                <li data-value="nil" class="selected"></li>
+                <li data-value="AF" class="disabled">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/af.svg"
+                        width="20"
+                      />
+                      Afghanistan (Disabled)
+                    </p></span
+                  >
+                </li>
+                <li data-value="AX">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/ax.svg"
+                        width="20"
+                      />
+                      Aland Islands
+                    </p></span
+                  >
+                </li>
+                <li data-value="AL">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/al.svg"
+                        width="20"
+                      />
+                      Albania
+                    </p></span
+                  >
+                </li>
+                <li data-value="DZ">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/dz.svg"
+                        width="20"
+                      />
+                      Algeria
+                    </p></span
+                  >
+                </li>
+                <li data-value="AS">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/as.svg"
+                        width="20"
+                      />
+                      American Samoa
+                    </p></span
+                  >
+                </li>
+                <li data-value="AD">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/ad.svg"
+                        width="20"
+                      />
+                      Andorra
+                    </p></span
+                  >
+                </li>
+                <li data-value="AO">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/ao.svg"
+                        width="20"
+                      />
+                      Angola
+                    </p></span
+                  >
+                </li>
+                <li data-value="AI">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/ai.svg"
+                        width="20"
+                      />
+                      Anguilla
+                    </p></span
+                  >
+                </li>
+                <li data-value="AQ">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/aq.svg"
+                        width="20"
+                      />
+                      Antarctica
+                    </p></span
+                  >
+                </li>
+                <li data-value="AG">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/ag.svg"
+                        width="20"
+                      />
+                      Antigua and Barbuda
+                    </p></span
+                  >
+                </li>
+                <li data-value="AR">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/ar.svg"
+                        width="20"
+                      />
+                      Argentina
+                    </p></span
+                  >
+                </li>
+                <li data-value="AM">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/am.svg"
+                        width="20"
+                      />
+                      Armenia
+                    </p></span
+                  >
+                </li>
+                <li data-value="AW">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/aw.svg"
+                        width="20"
+                      />
+                      Aruba
+                    </p></span
+                  >
+                </li>
+                <li data-value="AU">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/au.svg"
+                        width="20"
+                      />
+                      Australia
+                    </p></span
+                  >
+                </li>
+                <li data-value="AT">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/at.svg"
+                        width="20"
+                      />
+                      Austria
+                    </p></span
+                  >
+                </li>
+                <li data-value="AZ">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/az.svg"
+                        width="20"
+                      />
+                      Azerbaijan
+                    </p></span
+                  >
+                </li>
+                <li data-value="BS">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bs.svg"
+                        width="20"
+                      />
+                      Bahamas
+                    </p></span
+                  >
+                </li>
+                <li data-value="BH">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bh.svg"
+                        width="20"
+                      />
+                      Bahrain
+                    </p></span
+                  >
+                </li>
+                <li data-value="BD">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bd.svg"
+                        width="20"
+                      />
+                      Bangladesh
+                    </p></span
+                  >
+                </li>
+                <li data-value="BB">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bb.svg"
+                        width="20"
+                      />
+                      Barbados
+                    </p></span
+                  >
+                </li>
+                <li data-value="BY">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/by.svg"
+                        width="20"
+                      />
+                      Belarus
+                    </p></span
+                  >
+                </li>
+                <li data-value="BE">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/be.svg"
+                        width="20"
+                      />
+                      Belgium
+                    </p></span
+                  >
+                </li>
+                <li data-value="BZ">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bz.svg"
+                        width="20"
+                      />
+                      Belize
+                    </p></span
+                  >
+                </li>
+                <li data-value="BJ">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bj.svg"
+                        width="20"
+                      />
+                      Benin
+                    </p></span
+                  >
+                </li>
+                <li data-value="BM">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bm.svg"
+                        width="20"
+                      />
+                      Bermuda
+                    </p></span
+                  >
+                </li>
+                <li data-value="BT">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bt.svg"
+                        width="20"
+                      />
+                      Bhutan
+                    </p></span
+                  >
+                </li>
+                <li data-value="BO">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bo.svg"
+                        width="20"
+                      />
+                      Bolivia
+                    </p></span
+                  >
+                </li>
+                <li data-value="BQ">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bq.svg"
+                        width="20"
+                      />
+                      Bonaire, Sint Eustatius and Saba
+                    </p></span
+                  >
+                </li>
+                <li data-value="BA">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/ba.svg"
+                        width="20"
+                      />
+                      Bosnia and Herzegovina
+                    </p></span
+                  >
+                </li>
+                <li data-value="BW">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bw.svg"
+                        width="20"
+                      />
+                      Botswana
+                    </p></span
+                  >
+                </li>
+                <li data-value="BV">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bv.svg"
+                        width="20"
+                      />
+                      Bouvet Island
+                    </p></span
+                  >
+                </li>
+                <li data-value="BR">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/br.svg"
+                        width="20"
+                      />
+                      Brazil
+                    </p></span
+                  >
+                </li>
+                <li data-value="IO">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/io.svg"
+                        width="20"
+                      />
+                      British Indian Ocean Territory
+                    </p></span
+                  >
+                </li>
+                <li data-value="BN">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bn.svg"
+                        width="20"
+                      />
+                      Brunei Darussalam
+                    </p></span
+                  >
+                </li>
+                <li data-value="BG">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bg.svg"
+                        width="20"
+                      />
+                      Bulgaria
+                    </p></span
+                  >
+                </li>
+                <li data-value="BF">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bf.svg"
+                        width="20"
+                      />
+                      Burkina Faso
+                    </p></span
+                  >
+                </li>
+                <li data-value="BI">
+                  <span
+                    ><p>
+                      <img
+                        src="https://cdn.jsdelivr.net/gh/hampusborgos/country-flags@main/svg/bi.svg"
+                        width="20"
+                      />
+                      Burundi
+                    </p></span
+                  >
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </li>
+      </div>
+    </section>
+    <script src="main.js" defer></script>
+  </body>
+</html>
