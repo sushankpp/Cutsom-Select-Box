@@ -40,13 +40,15 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
-items.forEach((item, index) => {
+items.forEach((item) => {
   item.addEventListener('click', (e) => {
     if (e.target.innerHTML) {
       selectedValue.innerHTML = e.target.innerHTML;
+      ulList.classList.remove('show'); // Hide the list after selecting an item
     }
   });
 });
+
 
 ulList.addEventListener('click', (event) => {
   event.stopPropagation(); // Stop propagation to prevent the menu from closing
