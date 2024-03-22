@@ -40,6 +40,15 @@ document.addEventListener('keydown', (event) => {
   }
 });
 
+items.forEach((item, index) => {
+  item.addEventListener('click', (e) => {
+    if (e.target.innerHTML) {
+      selectedValue.innerHTML = e.target.innerHTML;
+      console.log(e.target.textContent);
+    }
+  });
+});
+
 // Update visual indication of selected item
 function updateSelected() {
   items.forEach((item, index) => {
