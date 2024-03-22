@@ -25,12 +25,12 @@ document.addEventListener('keydown', (event) => {
   const key = event.key;
   if (key === 'ArrowDown') {
     selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
-    scrollToSelected();
     updateSelected();
+    scrollToSelected();
   } else if (key === 'ArrowUp') {
     selectedIndex = Math.max(selectedIndex - 1, 0);
-    scrollToSelected();
     updateSelected();
+    scrollToSelected();
   } else if (key === 'Enter') {
     if (selectedIndex !== -1) {
       selectedValue.innerHTML = items[selectedIndex].textContent;
@@ -44,9 +44,12 @@ items.forEach((item, index) => {
   item.addEventListener('click', (e) => {
     if (e.target.innerHTML) {
       selectedValue.innerHTML = e.target.innerHTML;
-      console.log(e.target.textContent);
     }
   });
+});
+
+ulList.addEventListener('click', (event) => {
+  event.stopPropagation(); // Stop propagation to prevent the menu from closing
 });
 
 // Update visual indication of selected item
@@ -66,10 +69,26 @@ function scrollToSelected() {
     const selectedElement = items[selectedIndex];
     const listRect = ulList.getBoundingClientRect();
     const itemRect = selectedElement.getBoundingClientRect();
+
+    // Check if the selected item is above the visible area
     if (itemRect.top < listRect.top) {
       ulList.scrollTop -= listRect.top - itemRect.top;
-    } else if (itemRect.bottom > listRect.bottom) {
+    }
+    // Check if the selected item is below the visible area
+    else if (itemRect.bottom > listRect.bottom) {
       ulList.scrollTop += itemRect.bottom - listRect.bottom;
     }
   }
 }
+
+search.addEventListener('input', () => {
+  const searchText = search.value.toLowerCase();
+  items.forEach((item) => {
+    const text = item.textContent.toLowerCase();
+    if (text.includes(searchText)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+});
