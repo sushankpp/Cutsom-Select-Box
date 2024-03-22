@@ -6,8 +6,10 @@ const SelectDiv = document.getElementById('select');
 const selectedValue = document.getElementById('selected-value');
 const close = document.querySelector('.close');
 
+let selectedIndex = -1; // Initialize the selected index
+
 close.addEventListener('click', (event) => {
-  event.stopPropagation(); 
+  event.stopPropagation(); // Stop propagation to prevent the menu from closing
   ulList.classList.remove('show');
 });
 
@@ -16,28 +18,49 @@ SelectDiv.addEventListener('click', () => {
   selectedValue.classList.toggle('clicked');
 });
 
-search.addEventListener('input', () => {
-  const searchText = search.value.toLowerCase();
-  items.forEach((item) => {
-    const text = item.textContent.toLowerCase();
-    if (text.includes(searchText)) {
-      item.style.display = 'block';
+// Keyboard navigation and selection
+document.addEventListener('keydown', (event) => {
+  if (!ulList.classList.contains('show')) return; // Don't handle keys if the list is not visible
+
+  const key = event.key;
+  if (key === 'ArrowDown') {
+    selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+    scrollToSelected();
+    updateSelected();
+  } else if (key === 'ArrowUp') {
+    selectedIndex = Math.max(selectedIndex - 1, 0);
+    scrollToSelected();
+    updateSelected();
+  } else if (key === 'Enter') {
+    if (selectedIndex !== -1) {
+      selectedValue.innerHTML = items[selectedIndex].textContent;
+    }
+    ulList.classList.remove('show');
+    selectedIndex = -1; // Reset selected index after selection
+  }
+});
+
+// Update visual indication of selected item
+function updateSelected() {
+  items.forEach((item, index) => {
+    if (index === selectedIndex) {
+      item.classList.add('hovered');
     } else {
-      item.style.display = 'none';
+      item.classList.remove('hovered');
     }
   });
-});
+}
 
-items.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    if (e.target.innerHTML) {
-      selectedValue.innerHTML = e.target.innerHTML;
+// Scroll to the selected item if it is not fully visible
+function scrollToSelected() {
+  if (selectedIndex !== -1) {
+    const selectedElement = items[selectedIndex];
+    const listRect = ulList.getBoundingClientRect();
+    const itemRect = selectedElement.getBoundingClientRect();
+    if (itemRect.top < listRect.top) {
+      ulList.scrollTop -= listRect.top - itemRect.top;
+    } else if (itemRect.bottom > listRect.bottom) {
+      ulList.scrollTop += itemRect.bottom - listRect.bottom;
     }
-  });
-});
-
-ulList.addEventListener('click', (event) => {
-  event.stopPropagation(); 
-});
-
-console.log(items);
+  }
+}

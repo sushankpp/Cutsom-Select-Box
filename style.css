@@ -133,6 +133,11 @@ h1 {
   font-weight: 600;
 }
 
+.hovered {
+  color: green;
+  font-weight: 800;
+}
+
 .select-list li:hover {
   background-color: #f0f0f0;
 }
@@ -166,6 +171,6 @@ h1 {
   }
 
   .select-list {
-    height: 100%; 
+    height: 100%;
   }
 }
