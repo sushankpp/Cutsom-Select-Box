@@ -5,6 +5,7 @@ const selectTitle = document.getElementById('select-title');
 const SelectDiv = document.getElementById('select');
 const selectedValue = document.getElementById('selected-value');
 const close = document.querySelector('.close');
+const body = document.querySelector('body');
 
 let selectedIndex = -1; // Initialize the selected index
 
@@ -45,10 +46,10 @@ items.forEach((item) => {
     if (e.target.innerHTML) {
       selectedValue.innerHTML = e.target.innerHTML;
       ulList.classList.remove('show'); // Hide the list after selecting an item
+      console.log(e.target.textContent);
     }
   });
 });
-
 
 ulList.addEventListener('click', (event) => {
   event.stopPropagation(); // Stop propagation to prevent the menu from closing
@@ -93,4 +94,11 @@ search.addEventListener('input', () => {
       item.style.display = 'none';
     }
   });
+});
+
+document.addEventListener('click', (e) => {
+  if (!SelectDiv.contains(e.target)) {
+    ulList.classList.remove('show');
+    selectedValue.classList.remove('clicked');
+  }
 });

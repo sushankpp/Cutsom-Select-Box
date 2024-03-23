@@ -66,7 +66,7 @@ h1 {
 
 .selected-value.clicked::after {
   rotate: 135deg;
-  transform: translate(10px, 10px);
+  transform: translate(3px, 3px);
 }
 
 .select-menu {
