@@ -16,6 +16,7 @@ close.addEventListener('click', (event) => {
 
 SelectDiv.addEventListener('click', () => {
   ulList.classList.toggle('show');
+  search.focus();
   selectedValue.classList.toggle('clicked');
 });
 
@@ -46,6 +47,7 @@ items.forEach((item) => {
     if (e.target.innerHTML) {
       selectedValue.innerHTML = e.target.innerHTML;
       ulList.classList.remove('show'); // Hide the list after selecting an item
+
       console.log(e.target.textContent);
     }
   });
